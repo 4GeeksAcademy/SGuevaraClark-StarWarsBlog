@@ -17,8 +17,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log(error);
 				}
-			}
-		
+			},
+
+			loadPerson: async (uid) => {
+				try {
+					const resp = await fetch(getStore( ).url+'people/'+uid);
+					if (!resp.ok) throw new Error('Error loading data');
+					const data = await resp.json()
+					console.log(data)
+					setStore({person: data.result})
+				} catch (error) {
+					console.log(error);
+				}
+			} 
+	
 		}
 	};
 };
