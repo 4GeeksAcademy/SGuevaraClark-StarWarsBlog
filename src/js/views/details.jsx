@@ -12,20 +12,32 @@ useEffect(()=>{
     actions.loadPerson(params.uid)
 }, [])
 
-    return(
-<div className="container">
-    { 
-    store.person?.properties? 
-    <>
-        <h2>Name: {store.person?.properties?.name} </h2>
-        <p>Height: {store.person?.properties?.height} </p>
-        <p>Mass: {store.person?.properties?.mass} </p>
-        <p>Hair Color: {store.person?.properties?.hair_color} </p>
-    </> 
-    :
-    <h2>Loading</h2>
-}
-</div>
+const {height, name, mass} = store.person?.properties || ' '
 
+    return(
+        <div className="container">
+        { 
+        store.person?.properties ? 
+        <>
+            <div className="row">
+                <div className="col">
+                    <img 
+                        src={`https://starwars-visualguide.com/assets/img/characters/${params.uid}.jpg`}
+                        alt={name}
+                        className="img-fluid"
+                    />
+                </div>
+                <div className="col">
+                    <h2>Name: {name} </h2>
+                    <p>Height: {height} </p>
+                    <p>Mass: {mass} </p>
+                    <p>Hair Color: {store.person?.properties?.hair_color} </p>
+                </div>
+            </div>
+        </> 
+        :
+        <h2>Loading</h2>
+        }
+    </div>
     );
 }

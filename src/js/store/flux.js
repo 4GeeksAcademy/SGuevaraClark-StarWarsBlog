@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			people: [],
+			person: null,
 			url: 'https://www.swapi.tech/api/'
 			
 		},
