@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+
+body {
+    background: black url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1200") fixed;
+    background-size: cover;
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #feda4a;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #feda4a;
+}
+
+.card-title {
+    color: #feda4a;
+}
